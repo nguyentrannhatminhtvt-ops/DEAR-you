@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>DEAR 💖</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #ffe6eb;
+      margin-top: 100px;
+    }
+
+    h1 {
+      color: #ff4d6d;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      position: absolute;
+    }
+
+    #yes {
+      background-color: #ff4d6d;
+      color: white;
+      left: 40%;
+    }
+
+    #no {
+      background-color: #999;
+      color: white;
+      left: 55%;
+    }
+
+    #result {
+      display: none;
+      margin-top: 100px;
+    }
+
+    .heart {
+      font-size: 80px;
+      color: red;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Bạn có thích tôi khôngg?? 🥺</h1>
+
+  <button id="yes" class="btn">Cóooo 💖</button>
+  <button id="no" class="btn">Hong 😏</button>
+
+  <div id="result">
+    <div class="heart">❤️</div>
+    <h2>Mình cũng thíchhh mình lắm :33</h2>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("no");
+    const yesBtn = document.getElementById("yes");
+
+    // Khi rê chuột vào nút "Hong" thì nó chạy về gần nút "Có"
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * window.innerWidth * 0.6;
+      const y = Math.random() * window.innerHeight * 0.6;
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+
+    // Khi bấm "Có"
+    yesBtn.addEventListener("click", () => {
+      document.querySelector("h1").style.display = "none";
+      yesBtn.style.display = "none";
+      noBtn.style.display = "none";
+      document.getElementById("result").style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
